@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil · UNAB Campus HL</title>
+  <meta name="description" content="Perfil del estudiante: datos personales, contacto y seguridad.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <section class="profile-hero card" aria-labelledby="pName">
+      <div class="profile-cover" data-photo="assets/img/fotos/campus-jardin.jpg" data-photo-pos="center 62%"><div data-pattern="10x2"></div></div>
+      <div class="profile-head">
+        <div class="avatar-wrap">
+          <div id="pAvatar"></div>
+          <label class="avatar-edit" for="photoInput" title="Cambiar foto"><span data-icon="camera" data-icon-class="icon-sm"></span><span class="sr-only">Cambiar foto de perfil</span></label>
+          <input type="file" id="photoInput" accept="image/png, image/jpeg, image/webp" class="sr-only">
+        </div>
+        <div class="profile-id">
+          <h1 id="pName"></h1>
+          <p class="muted" id="pMeta"></p>
+          <div class="row" id="pBadges"></div>
+        </div>
+        <button type="button" class="btn btn-sm btn-ghost hidden" id="removePhoto"><span data-icon="trash" data-icon-class="icon-sm"></span> Quitar foto</button>
+      </div>
+    </section>
+
+    <div class="grid grid-main section-gap">
+      <section class="card" aria-labelledby="edTitle">
+        <div class="card-header"><div><h2 id="edTitle">Información personal</h2><p class="card-sub">Actualiza tus datos de contacto y académicos.</p></div></div>
+        <div id="profileAlert" role="alert"></div>
+        <form id="profileForm" novalidate>
+          <div class="form-grid">
+            <div class="field span-2"><label for="nombre">Nombre completo</label>
+              <input class="input" id="nombre" autocomplete="name" aria-describedby="nombreError"><span class="field-error" id="nombreError"></span></div>
+            <div class="field"><label for="codigo">Código estudiantil</label>
+              <input class="input" id="codigo" readonly aria-describedby="codigoHint"><span class="hint" id="codigoHint">No editable: identifica tu cuenta.</span></div>
+            <div class="field"><label for="correo">Correo institucional</label>
+              <input class="input" id="correo" readonly><span class="hint">No editable.</span></div>
+            <div class="field"><label for="programa">Programa académico</label>
+              <input class="input" id="programa" aria-describedby="programaError"><span class="field-error" id="programaError"></span></div>
+            <div class="field"><label for="semestre">Semestre</label>
+              <select class="select" id="semestre"><option value="">Sin especificar</option></select></div>
+            <div class="field span-2"><label for="telefono">Celular</label>
+              <input class="input" id="telefono" inputmode="numeric" maxlength="10" placeholder="3001234567" aria-describedby="telefonoError"><span class="field-error" id="telefonoError"></span></div>
+          </div>
+          <div class="row form-actions">
+            <button type="button" class="btn btn-outline" id="discardBtn" disabled>Descartar cambios</button>
+            <button type="submit" class="btn btn-primary" id="saveBtn" disabled><span data-icon="check" data-icon-class="icon-sm"></span> Guardar cambios</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="stack">
+        <section class="card" aria-labelledby="miniTitle">
+          <h2 id="miniTitle" class="card-title-sm">Resumen de Horas Libres</h2>
+          <div id="miniSummary"></div>
+        </section>
+        <section class="card" aria-labelledby="pwTitle">
+          <h2 id="pwTitle" class="card-title-sm">Seguridad</h2>
+          <p class="small muted">Cambia tu contraseña periódicamente.</p>
+          <button class="btn btn-outline btn-block" type="button" id="pwBtn"><span data-icon="lock" data-icon-class="icon-sm"></span> Cambiar contraseña</button>
+        </section>
+        <section class="card danger-zone" aria-labelledby="dzTitle">
+          <h2 id="dzTitle" class="card-title-sm">Eliminar cuenta</h2>
+          <p class="small muted">Se borrarán tu perfil, inscripciones, historial y horario. Esta acción no se puede deshacer.</p>
+          <button class="btn btn-danger-outline btn-block" type="button" id="deleteBtn"><span data-icon="trash" data-icon-class="icon-sm"></span> Eliminar mi cuenta</button>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de actividades · UNAB Campus HL</title>
+  <meta name="description" content="Cronograma de actividades de Bienestar Universitario válidas por Horas Libres.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <div class="page-head photo-banner" data-photo="assets/img/fotos/feria-bienestar.jpg" data-photo-pos="center 40%">
+      <span class="photo-tag">Bienestar Universitario</span>
+      <div>
+        <p class="crumbs">Apoyo académico <span>›</span> Bienestar Universitario <span>›</span> Horas libres</p>
+        <h1>Agenda de actividades</h1>
+        <p>Cronograma de actividades de Bienestar válidas por Horas Libres. Inscríbete, asiste y responde la encuesta.</p>
+      </div>
+      <a class="btn btn-outline" href="mis-lugares.html"><span data-icon="listCheck" data-icon-class="icon-sm"></span> Mis inscripciones</a>
+    </div>
+
+    <div class="alert"><span data-icon="info" data-icon-class="icon-sm"></span><span>Las actividades con la etiqueta <strong>Actividad real UNAB</strong> se basan en eventos publicados por Bienestar Universitario (nombre, lugar y horas libres; enlace a la fuente). Las fechas se reorganizaron en el calendario actual para la demostración. Las marcadas <strong>Ejemplo</strong> son ilustrativas.</span></div>
+
+    <section class="card filters" aria-label="Búsqueda y filtros de la agenda">
+      <div class="toolbar">
+        <div class="input-group grow">
+          <span class="input-icon" data-icon="search"></span>
+          <label for="aSearch" class="sr-only">Buscar actividad</label>
+          <input class="input" id="aSearch" type="search" placeholder="Buscar actividad o lugar (ej.: cine, yoga, donación)…" autocomplete="off">
+        </div>
+        <label for="aMod" class="sr-only">Modalidad</label>
+        <select class="select toolbar-select" id="aMod">
+          <option value="">Presencial y virtual</option>
+          <option value="presencial">Solo presencial</option>
+          <option value="virtual">Solo virtual</option>
+        </select>
+        <label class="checkbox toggle-cupos"><input type="checkbox" id="aCupos"> Solo con cupos</label>
+      </div>
+      <div class="row-between filters-bottom">
+        <div class="chips" id="aCats" role="group" aria-label="Filtrar por tipo de actividad"></div>
+        <span class="small muted" id="aCount" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <div class="grid grid-main agenda-grid">
+      <section class="card" aria-labelledby="wkLabel">
+        <div class="week-nav">
+          <button class="icon-btn" type="button" id="wkPrev" aria-label="Semana anterior"><span data-icon="chevronRight" data-icon-class="icon flip"></span></button>
+          <div class="week-label"><h2 id="wkLabel"></h2><span class="xsmall muted" id="wkSub"></span></div>
+          <button class="icon-btn" type="button" id="wkNext" aria-label="Semana siguiente"><span data-icon="chevronRight"></span></button>
+          <button class="btn btn-sm btn-ghost" type="button" id="wkToday">Hoy</button>
+        </div>
+        <div id="agendaDays" class="agenda-days" aria-live="polite"></div>
+      </section>
+
+      <div class="stack">
+        <section class="card" aria-labelledby="calTitle">
+          <h2 id="calTitle" class="card-title-sm"></h2>
+          <div id="miniCal" class="mini-cal"></div>
+        </section>
+        <section class="card how-card" aria-labelledby="howTitle">
+          <h2 id="howTitle" class="card-title-sm">¿Cómo se registran mis horas?</h2>
+          <ol class="how-steps">
+            <li><b>1</b><span><strong>Inscríbete</strong> en la actividad (se descuenta un cupo).</span></li>
+            <li><b>2</b><span><strong>Presencial:</strong> genera tu código QR y preséntalo al ingresar. <strong>Virtual:</strong> pulsa “Confirmar asistencia”.</span></li>
+            <li><b>3</b><span>Responde la <strong>encuesta de satisfacción</strong> (6 preguntas).</span></li>
+            <li><b>4</b><span>La actividad queda <strong>Completada</strong> y las horas se suman a tu avance.</span></li>
+          </ol>
+          <a class="small" id="howLink" target="_blank" rel="noopener">Proceso oficial en MiPortalU (UNAB) ↗</a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/places-ui.js"></script>
+  <script src="js/pages/cronograma.js"></script>
+</body>
+</html>

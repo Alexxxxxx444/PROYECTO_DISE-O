@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lugares del campus · UNAB Campus HL</title>
+  <meta name="description" content="Lugares del campus donde los estudiantes pueden realizar sus Horas Libres.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <div class="page-head photo-banner" data-photo="assets/img/fotos/torre-principal.jpg" data-photo-pos="center 35%">
+      <span class="photo-tag">Campus El Jardín y CSU</span>
+      <div>
+        <h1>Lugares del campus</h1>
+        <p>Escenarios donde Bienestar Universitario realiza actividades de Horas Libres.</p>
+      </div>
+      <div class="segmented" role="group" aria-label="Tipo de vista">
+        <button type="button" data-view="lista" aria-pressed="true"><span data-icon="grid" data-icon-class="icon-sm"></span> Tarjetas</button>
+        <button type="button" data-view="mapa" aria-pressed="false"><span data-icon="map" data-icon-class="icon-sm"></span> Mapa</button>
+      </div>
+    </div>
+
+    <div class="alert"><span data-icon="info" data-icon-class="icon-sm"></span><span>Banú, Gimnasio y las cafeterías Casona, Bosque y CSU vienen del proyecto; los auditorios, el coliseo del CSU y la Sala de Atención Integral son escenarios reales de Bienestar UNAB. Cupos y posiciones en el plano son de demostración.</span></div>
+
+    <section class="card filters" aria-label="Búsqueda y filtros">
+      <div class="toolbar">
+        <div class="input-group grow">
+          <span class="input-icon" data-icon="search"></span>
+          <label for="pSearch" class="sr-only">Buscar lugar por nombre</label>
+          <input class="input" id="pSearch" type="search" placeholder="Buscar lugar o actividad (ej.: yoga, teatro)…" autocomplete="off">
+        </div>
+        <label for="pAvail" class="sr-only">Disponibilidad</label>
+        <select class="select toolbar-select" id="pAvail">
+          <option value="">Toda disponibilidad</option>
+          <option value="con">Con cupos</option>
+          <option value="sin">Sin cupos</option>
+        </select>
+      </div>
+      <div class="row-between filters-bottom">
+        <div class="chips" id="pCats" role="group" aria-label="Filtrar por categoría"></div>
+        <span class="small muted" id="pCount" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section id="listView" class="grid grid-3 places-grid" aria-label="Listado de lugares"></section>
+    <div id="placesEmpty" class="card empty hidden"></div>
+
+    <section id="mapView" class="map-layout hidden" aria-label="Mapa interactivo del campus">
+      <div class="card map-card">
+        <div class="row-between map-head">
+          <h2 class="card-title-sm">Mapa interactivo</h2>
+          <span class="badge badge-demo" id="mapBadge">Cargando plano…</span>
+        </div>
+        <div class="map-canvas" id="mapCanvas"></div>
+        <div class="map-legend" id="mapLegend"></div>
+      </div>
+      <aside class="card map-panel" id="mapPanel" aria-live="polite"></aside>
+    </section>
+
+    <section class="card section-gap gmap-card" id="gmaps" aria-label="Ubicación en Google Maps"></section>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/places-ui.js"></script>
+  <script src="js/campus-map.js"></script>
+  <script src="js/gmaps.js"></script>
+  <script src="js/pages/lugares.js"></script>
+</body>
+</html>

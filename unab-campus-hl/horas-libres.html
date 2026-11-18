@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Horas Libres · UNAB Campus HL</title>
+  <meta name="description" content="Detalle del avance e historial de Horas Libres del estudiante.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <div class="page-head photo-banner" data-photo="assets/img/fotos/porras.jpg" data-photo-pos="center 35%">
+      <span class="photo-tag">Tu avance</span>
+      <div>
+        <h1>Mis Horas Libres</h1>
+        <p>Consulta tu avance, tu historial y genera tu constancia.</p>
+      </div>
+      <a class="btn btn-primary" href="constancia.html"><span data-icon="printer" data-icon-class="icon-sm"></span> Generar constancia</a>
+    </div>
+
+    <div class="grid grid-main">
+      <section class="card" aria-labelledby="avTitle">
+        <div class="card-header"><h2 id="avTitle">Avance general</h2><span id="reqBadge"></span></div>
+        <div id="hlSummary" class="hl-summary"></div>
+        <div class="big-progress">
+          <div class="row-between small"><strong id="pctLabel">0% completado</strong><span class="muted" id="leftLabel"></span></div>
+          <div class="progress progress-lg" id="bigBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Porcentaje de Horas Libres cumplidas"><div class="progress-bar"></div></div>
+          <div class="milestones" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="ritTitle">
+        <div class="card-header"><h2 id="ritTitle">Tu ritmo</h2></div>
+        <ul class="stat-list" id="pace"></ul>
+      </section>
+    </div>
+
+    <section class="card section-gap" aria-labelledby="histTitle">
+      <div class="card-header">
+        <div><h2 id="histTitle">Historial de Horas Libres</h2><p class="card-sub" id="histCount"></p></div>
+      </div>
+      <div class="toolbar">
+        <div class="input-group grow">
+          <span class="input-icon" data-icon="search"></span>
+          <label for="hSearch" class="sr-only">Buscar en el historial</label>
+          <input class="input" id="hSearch" type="search" placeholder="Buscar por actividad, lugar o fecha…">
+        </div>
+        <label for="hPlace" class="sr-only">Filtrar por tipo de actividad</label>
+        <select class="select toolbar-select" id="hPlace"><option value="">Todos los tipos</option></select>
+        <label for="hPeriod" class="sr-only">Filtrar por periodo</label>
+        <select class="select toolbar-select" id="hPeriod">
+          <option value="">Todo el periodo</option>
+          <option value="30">Últimos 30 días</option>
+          <option value="90">Últimos 90 días</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table class="table" id="histTable">
+          <caption class="sr-only">Historial de Horas Libres obtenidas</caption>
+          <thead><tr>
+            <th scope="col"><button type="button" data-sort="fecha">Fecha <span class="sort-ind"></span></button></th>
+            <th scope="col"><button type="button" data-sort="lugar">Actividad <span class="sort-ind"></span></button></th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Horario</th>
+            <th scope="col" class="text-right"><button type="button" data-sort="horas">Horas <span class="sort-ind"></span></button></th>
+          </tr></thead>
+          <tbody></tbody>
+          <tfoot><tr><td colspan="4">Total de horas mostradas</td><td class="text-right" id="histTotal">0</td></tr></tfoot>
+        </table>
+      </div>
+      <div id="histEmpty" class="empty hidden"></div>
+    </section>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/horas.js"></script>
+</body>
+</html>

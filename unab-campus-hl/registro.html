@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta · UNAB Campus HL</title>
+  <meta name="description" content="Crea tu cuenta de estudiante en UNAB Campus HL.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#registerForm">Ir al formulario de registro</a>
+
+  <div class="auth auth-register">
+    <section class="auth-brand" aria-label="Presentación de UNAB Campus HL" data-photo="assets/img/fotos/fachada-torre.jpg" data-photo-pos="center 40%">
+      <a class="brand-lockup dark" href="index.html" aria-label="UNAB Campus HL">
+        <img class="brand-iso" src="assets/img/unab/isotipo-azul.png" alt="" width="40" height="45">
+        <span class="brand-sep" aria-hidden="true"></span>
+        <span class="brand-words"><b>unab</b><strong>Campus HL</strong></span>
+      </a>
+      <div class="auth-pattern" data-pattern="4x6"></div>
+      <div class="auth-hero">
+        <span class="eyebrow">Registro de estudiantes</span>
+        <h1>Empieza a planear tus <span>Horas Libres.</span></h1>
+        <p>Crea tu cuenta con tu correo institucional y organiza tus actividades en el campus desde el primer día del semestre.</p>
+        <ol class="auth-steps">
+          <li><b>1</b><span><strong>Crea tu cuenta</strong> con tu código y correo UNAB.</span></li>
+          <li><b>2</b><span><strong>Explora los lugares</strong> y elige un turno con cupo.</span></li>
+          <li><b>3</b><span><strong>Registra tu asistencia</strong> y mira crecer tu avance.</span></li>
+        </ol>
+      </div>
+      <footer>Universidad Autónoma de Bucaramanga · Proyecto académico</footer>
+    </section>
+
+    <main class="auth-panel" id="main">
+      <div class="auth-panel-top">
+        <a class="btn btn-ghost btn-sm" href="index.html"><span data-icon="arrowLeft" data-icon-class="icon-sm"></span> Volver al inicio de sesión</a>
+        <button class="icon-btn" type="button" data-theme-toggle></button>
+      </div>
+
+      <div class="auth-form-wrap wide">
+        <h2>Crear cuenta</h2>
+        <p>Completa tus datos. Los campos marcados con <span aria-hidden="true" class="req">*</span><span class="sr-only">asterisco</span> son obligatorios.</p>
+
+        <div id="formAlert" role="alert"></div>
+
+        <form id="registerForm" novalidate>
+          <fieldset class="form-section">
+            <legend>Datos del estudiante</legend>
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+                <div class="input-group"><span class="input-icon" data-icon="user"></span>
+                  <input class="input" id="nombre" name="nombre" autocomplete="name" placeholder="Ej.: María Fernanda Gómez Ruiz" required aria-describedby="nombreError"></div>
+                <span class="field-error" id="nombreError"></span>
+              </div>
+              <div class="field">
+                <label for="codigo">Código estudiantil <span class="req" aria-hidden="true">*</span></label>
+                <div class="input-group"><span class="input-icon" data-icon="idCard"></span>
+                  <input class="input" id="codigo" name="codigo" placeholder="U00123456" maxlength="9" required aria-describedby="codigoError codigoHint"></div>
+                <span class="hint" id="codigoHint">Formato: U00 + 6 dígitos.</span>
+                <span class="field-error" id="codigoError"></span>
+              </div>
+              <div class="field">
+                <label for="correo">Correo institucional <span class="req" aria-hidden="true">*</span></label>
+                <div class="input-group"><span class="input-icon" data-icon="mail"></span>
+                  <input class="input" type="email" id="correo" name="correo" autocomplete="email" placeholder="usuario@unab.edu.co" required aria-describedby="correoError"></div>
+                <span class="field-error" id="correoError"></span>
+              </div>
+              <div class="field">
+                <label for="programa">Programa académico</label>
+                <input class="input" id="programa" name="programa" placeholder="Ej.: Ingeniería de Sistemas" aria-describedby="programaError">
+                <span class="field-error" id="programaError"></span>
+              </div>
+              <div class="field">
+                <label for="semestre">Semestre</label>
+                <select class="select" id="semestre" name="semestre" aria-describedby="semestreError">
+                  <option value="">Selecciona…</option>
+                </select>
+                <span class="field-error" id="semestreError"></span>
+              </div>
+              <div class="field span-2">
+                <label for="telefono">Celular <span class="muted small">(opcional)</span></label>
+                <div class="input-group"><span class="input-icon" data-icon="phone"></span>
+                  <input class="input" id="telefono" name="telefono" inputmode="numeric" autocomplete="tel" placeholder="3001234567" maxlength="10" aria-describedby="telefonoError"></div>
+                <span class="field-error" id="telefonoError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Seguridad</legend>
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="password">Contraseña <span class="req" aria-hidden="true">*</span></label>
+                <div class="input-group"><span class="input-icon" data-icon="lock"></span>
+                  <input class="input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Crea una contraseña segura" required aria-describedby="passwordError">
+                  <button type="button" class="input-action" data-toggle-password="password" aria-label="Mostrar contraseña" aria-pressed="false"></button></div>
+                <span class="field-error" id="passwordError"></span>
+                <div id="strengthSlot"></div>
+              </div>
+              <div class="field span-2">
+                <label for="password2">Confirmar contraseña <span class="req" aria-hidden="true">*</span></label>
+                <div class="input-group"><span class="input-icon" data-icon="shield"></span>
+                  <input class="input" type="password" id="password2" name="password2" autocomplete="new-password" placeholder="Repite la contraseña" required aria-describedby="password2Error">
+                  <button type="button" class="input-action" data-toggle-password="password2" aria-label="Mostrar contraseña" aria-pressed="false"></button></div>
+                <span class="field-error" id="password2Error"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="field" id="aceptaField">
+            <label class="checkbox">
+              <input type="checkbox" id="acepta" name="acepta" aria-describedby="aceptaError">
+              <span>Acepto la <button type="button" class="link-btn" id="policyBtn">política de tratamiento de datos personales</button> para el uso de mi información en UNAB Campus HL.</span>
+            </label>
+            <span class="field-error" id="aceptaError"></span>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" type="submit" id="submitBtn">Crear mi cuenta <span data-icon="arrowRight"></span></button>
+        </form>
+
+        <p class="auth-switch">¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/registro.js"></script>
+</body>
+</html>

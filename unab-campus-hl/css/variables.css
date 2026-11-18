@@ -1,0 +1,93 @@
+/* ==========================================================================
+   UNAB Campus HL — Tokens de diseño
+   Identidad cromática: Azul Facultad de Ciencias de la Salud (#00AFF1)
+   Fuente: Manual de Identidad de Marca UNAB (pág. 43, Pantone P 115-8 C)
+   ========================================================================== */
+
+:root {
+  /* --- Azul institucional y escala complementaria --- */
+  --primary: #00AFF1;          /* Azul oficial F. Ciencias de la Salud */
+  --primary-hover: #009BD8;
+  --primary-strong: #0077A8;   /* Texto/enlace azul con contraste AA sobre blanco */
+  --primary-dark: #0A3D62;     /* Encabezados, navegación, hover profundo */
+  --primary-deeper: #062A45;   /* Barra lateral, panel de marca */
+  --primary-light: #E6F7FE;    /* Fondos secundarios, indicadores */
+  --primary-100: #CCEFFD;
+  --primary-200: #99DFFA;
+  --on-primary: #04263D;       /* Texto sobre #00AFF1 (contraste ≈ 7:1) */
+
+  /* --- Superficies y texto --- */
+  --background: #F5FAFD;
+  --surface: #FFFFFF;
+  --surface-2: #F0F6FA;
+  --border: #DCE7EF;
+  --border-strong: #C3D3DF;
+  --text-primary: #1E293B;
+  --text-secondary: #5B6B7F;
+  --text-muted: #8696A8;
+
+  /* --- Estados --- */
+  --success: #16A34A;
+  --success-bg: #E8F7EE;
+  --danger: #DC2626;
+  --danger-bg: #FDECEC;
+  --warning: #B7791F;
+  --warning-bg: #FDF4E3;
+
+  /* --- Categorías de lugares (variaciones del azul + neutros) --- */
+  --cat-cultura: #0A3D62;
+  --cat-deporte: #0077A8;
+  --cat-cafeteria: #00AFF1;
+
+  /* --- Tipografía (Open Sans: tipografía oficial de comunicación UNAB) --- */
+  --font: "Open Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fs-xs: .75rem;
+  --fs-sm: .875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+
+  /* --- Espaciado, radios, sombras --- */
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: .75rem; --sp-4: 1rem;
+  --sp-5: 1.25rem; --sp-6: 1.5rem; --sp-8: 2rem; --sp-10: 2.5rem;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(10, 61, 98, .06);
+  --shadow: 0 2px 8px rgba(10, 61, 98, .06), 0 1px 2px rgba(10, 61, 98, .04);
+  --shadow-lg: 0 12px 32px rgba(10, 61, 98, .14);
+  --focus-ring: 0 0 0 3px rgba(0, 175, 241, .45);
+
+  --sidebar-w: 264px;
+  --topbar-h: 68px;
+  --transition: 180ms cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ---------- Modo oscuro (F08): mantiene el azul como protagonista ---------- */
+[data-theme="dark"] {
+  --background: #07182A;
+  --surface: #0D2238;
+  --surface-2: #112B45;
+  --border: #1C3A57;
+  --border-strong: #274C6E;
+  --text-primary: #E6F1F8;
+  --text-secondary: #A3BBCF;
+  --text-muted: #7590A8;
+  --primary-strong: #4CC7F5;
+  --primary-light: #0E3350;
+  --primary-100: #124066;
+  --primary-200: #1A5B8A;
+  --primary-deeper: #041322;
+  --success-bg: #0F2F22;
+  --danger-bg: #3A1418;
+  --warning-bg: #3A2C10;
+  --cat-cultura: #7FD6F8;
+  --cat-deporte: #4CC7F5;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+  --shadow: 0 2px 10px rgba(0, 0, 0, .3);
+  --shadow-lg: 0 14px 36px rgba(0, 0, 0, .45);
+  color-scheme: dark;
+}

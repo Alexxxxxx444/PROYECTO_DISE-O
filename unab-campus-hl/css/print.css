@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Estilos de impresión — Constancia de Horas Libres (F10)
+   ========================================================================== */
+@page { size: A4; margin: 14mm; }
+
+html, body { background: #fff !important; color: #1E293B !important; }
+[data-theme="dark"] { --background: #fff; --surface: #fff; --text-primary: #1E293B; --text-secondary: #5B6B7F; --border: #DCE7EF; --primary-light: #E6F7FE; --surface-2: #F0F6FA; }
+
+.sidebar, .topbar, .app-footer, .no-print, .skip-link, .toast-region, .scrim { display: none !important; }
+.main, .content, .app { margin: 0 !important; background: #fff !important; }
+html[data-theme="dark"] { color-scheme: light; }
+.content { padding: 0 !important; max-width: none !important; }
+
+.certificate { box-shadow: none !important; border: 0 !important; margin: 0 !important; padding: 0 !important; max-width: none !important; }
+.certificate::before { display: none; }
+.cert-head { border-radius: 0 !important; }
+
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.cert-table tr, .cert-boxes, .cert-data { break-inside: avoid; }
+.cert-table thead { display: table-header-group; }

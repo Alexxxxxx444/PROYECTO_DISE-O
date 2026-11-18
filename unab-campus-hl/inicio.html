@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio · UNAB Campus HL</title>
+  <meta name="description" content="Panel principal del estudiante: resumen de Horas Libres, agenda de Bienestar y noticias UNAB.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <section class="welcome" aria-labelledby="welcomeTitle" data-photo="assets/img/fotos/torre-principal.jpg" data-photo-pos="center 30%">
+      <div class="welcome-pattern" data-pattern="6x3"></div>
+      <div class="welcome-text">
+        <span class="welcome-date" id="todayLabel"></span>
+        <h1 id="welcomeTitle">Hola, <span id="userFirst">estudiante</span></h1>
+        <p id="welcomeMsg">Cargando tu resumen…</p>
+        <div class="row">
+          <a class="btn btn-primary" href="cronograma.html"><span data-icon="plus" data-icon-class="icon-sm"></span> Horas Libres</a>
+          <a class="btn btn-glass" href="mis-lugares.html"><span data-icon="listCheck" data-icon-class="icon-sm"></span> Mis inscripciones</a>
+        </div>
+      </div>
+      <div class="welcome-ring" id="welcomeRing"></div>
+    </section>
+
+    <div id="pendingBanner"></div>
+
+    <section class="grid grid-4 kpis" id="kpis" aria-label="Resumen de Horas Libres"></section>
+
+    <div class="grid grid-main dash-grid">
+      <section class="card" aria-labelledby="progTitle">
+        <div class="card-header">
+          <div><h2 id="progTitle">Progreso de Horas Libres</h2><p class="card-sub">Avance frente a las 48 horas libres requeridas</p></div>
+          <a class="btn btn-sm btn-outline" href="horas-libres.html">Ver detalle <span data-icon="chevronRight" data-icon-class="icon-sm"></span></a>
+        </div>
+        <div id="progressBlock"></div>
+        <h3 class="section-mini">Horas obtenidas por tipo de actividad</h3>
+        <div id="byCat" class="hbars"></div>
+      </section>
+
+      <section class="card" aria-labelledby="upTitle">
+        <div class="card-header">
+          <div><h2 id="upTitle">Mis próximas actividades</h2><p class="card-sub">Inscripciones activas</p></div>
+          <a class="btn btn-sm btn-ghost" href="mis-lugares.html">Ver todas</a>
+        </div>
+        <ul class="list" id="upcomingList"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="agTitle">
+        <div class="card-header">
+          <div><h2 id="agTitle">Agenda de Bienestar</h2><p class="card-sub">Próximas actividades válidas por Horas Libres</p></div>
+          <a class="btn btn-sm btn-outline" href="cronograma.html">Agenda completa <span data-icon="chevronRight" data-icon-class="icon-sm"></span></a>
+        </div>
+        <div id="agendaList" class="event-list"></div>
+      </section>
+
+      <div class="stack">
+        <section class="card" aria-labelledby="qaTitle">
+          <h2 id="qaTitle" class="card-title-sm">Acceso rápido</h2>
+          <div class="quick-grid">
+            <a class="quick" href="cronograma.html"><span class="kpi-icon" data-icon="calendar"></span><strong>+Horas Libres</strong><small>Agenda de Bienestar</small></a>
+            <a class="quick" href="lugares.html?vista=mapa"><span class="kpi-icon" data-icon="map"></span><strong>Mapa</strong><small>Jardín y CSU</small></a>
+            <a class="quick" href="horario.html"><span class="kpi-icon" data-icon="gears"></span><strong>Horario</strong><small>Espacios libres</small></a>
+            <a class="quick" href="constancia.html"><span class="kpi-icon" data-icon="printer"></span><strong>Constancia</strong><small>Imprimir o PDF</small></a>
+          </div>
+        </section>
+        <section class="card" aria-labelledby="sugTitle">
+          <div class="row-between"><h2 id="sugTitle" class="card-title-sm">Encajan en tu horario</h2><a class="small" href="horario.html">Ver horario</a></div>
+          <div id="suggestList" class="suggest-list"></div>
+        </section>
+      </div>
+
+      <section class="card span-all" aria-labelledby="newsTitle">
+        <div class="card-header">
+          <div><h2 id="newsTitle">Noticias UNAB</h2><p class="card-sub" id="newsSub">Lo más reciente de la universidad</p></div>
+          <a class="btn btn-sm btn-outline" href="noticias.html">Todas las noticias <span data-icon="chevronRight" data-icon-class="icon-sm"></span></a>
+        </div>
+        <div id="newsPreview" class="news-grid compact"></div>
+      </section>
+
+      <section class="card span-all team-card" aria-labelledby="teamTitle">
+        <div class="team-photo" data-photo="assets/img/fotos/equipo.jpg" data-credit="Foto: equipo del proyecto" role="img" aria-label="Integrantes del proyecto trabajando en el portal en el campus de la UNAB"></div>
+        <div class="team-body">
+          <span class="welcome-date">Hecho por estudiantes UNAB</span>
+          <h2 id="teamTitle">El equipo detrás de Campus HL</h2>
+          <p class="muted">Creamos este portal para que consultar y organizar las Horas Libres sea fácil y rápido para todos los estudiantes.</p>
+          <ul>
+            <li><span data-icon="student"></span> Luis Alexander Rojas Bernal</li>
+            <li><span data-icon="student"></span> David Santiago Hernández Cristancho</li>
+            <li><span data-icon="student"></span> Dominik Maffiold</li>
+          </ul>
+          <div class="row"><a class="btn btn-outline btn-sm" href="lugares.html#gmaps"><span data-icon="map" data-icon-class="icon-sm"></span> Ver la UNAB en Google Maps</a></div>
+        </div>
+      </section>
+
+      <section class="card span-all services" aria-labelledby="svTitle">
+        <h2 id="svTitle" class="card-title-sm">Servicios UNAB</h2>
+        <div class="service-row" id="services"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/places-ui.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horario semanal · UNAB Campus HL</title>
+  <meta name="description" content="Horario semanal del estudiante con espacios libres y sugerencias de Horas Libres.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <div class="page-head photo-banner" data-photo="assets/img/fotos/espacio-aprendizaje.jpg" data-photo-pos="center 40%">
+      <span class="photo-tag">Organiza tu semana</span>
+      <div>
+        <h1>Horario semanal</h1>
+        <p>Visualiza tus clases y descubre en qué espacios libres puedes realizar Horas Libres.</p>
+      </div>
+      <div class="row">
+        <button class="btn btn-outline" type="button" id="demoClassesBtn"><span data-icon="refresh" data-icon-class="icon-sm"></span> Cargar horario de ejemplo</button>
+        <button class="btn btn-primary" type="button" id="addClassBtn"><span data-icon="plus" data-icon-class="icon-sm"></span> Agregar clase</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card schedule-card" aria-labelledby="schTitle">
+        <div class="row-between" style="margin-bottom:14px">
+          <h2 id="schTitle" class="card-title-sm">Semana actual</h2>
+          <div class="legend">
+            <span><i class="lg-class"></i> Clase</span>
+            <span><i class="lg-enroll"></i> Inscripción HL</span>
+            <span><i class="lg-free"></i> Espacio libre (≥ 1 h)</span>
+          </div>
+        </div>
+        <div class="schedule-scroll"><div class="schedule" id="schedule" role="grid" aria-label="Horario semanal de lunes a sábado"></div></div>
+      </section>
+      <div class="grid grid-2">
+        <section class="card" aria-labelledby="sgTitle">
+          <h2 id="sgTitle" class="card-title-sm">Sugerencias de Horas Libres</h2>
+          <p class="card-sub" style="margin-bottom:12px">Actividades de los próximos 7 días que no se cruzan con tus clases ni inscripciones.</p>
+          <div id="suggestList" class="suggest-list"></div>
+        </section>
+        <section class="card" aria-labelledby="clTitle">
+          <div class="row-between"><h2 id="clTitle" class="card-title-sm">Mis clases</h2><span class="badge badge-neutral" id="classCount"></span></div>
+          <ul class="list" id="classList"></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/places-ui.js"></script>
+  <script src="js/pages/horario.js"></script>
+</body>
+</html>

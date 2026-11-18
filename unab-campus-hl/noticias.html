@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias UNAB · UNAB Campus HL</title>
+  <meta name="description" content="Noticias de la Universidad Autónoma de Bucaramanga con buscador.">
+  <link rel="icon" href="assets/img/unab/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/unab/isotipo-azul-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <main id="main" class="content">
+    <div class="page-head photo-banner" data-photo="assets/img/fotos/estudio-radio.jpg" data-photo-pos="center 35%">
+      <span class="photo-tag">Universidad Autónoma de Bucaramanga</span>
+      <div>
+        <h1>Noticias UNAB</h1>
+        <p>Lo más reciente de la universidad, con buscador.</p>
+      </div>
+      <div class="row">
+        <a class="btn btn-outline" id="mpuNews" target="_blank" rel="noopener"><span data-icon="student" data-icon-class="icon-sm"></span> Noticias en MiPortalU ↗</a>
+        <a class="btn btn-primary" id="unabNews" target="_blank" rel="noopener"><span data-icon="globe" data-icon-class="icon-sm"></span> unab.edu.co ↗</a>
+      </div>
+    </div>
+
+    <div id="newsStatus"></div>
+
+    <section class="card filters" aria-label="Buscador de noticias">
+      <div class="toolbar" style="margin:0">
+        <div class="input-group grow">
+          <span class="input-icon" data-icon="search"></span>
+          <label for="nSearch" class="sr-only">Buscar noticias</label>
+          <input class="input" id="nSearch" type="search" placeholder="Buscar noticias (ej.: bienestar, acreditación, salud)…" autocomplete="off">
+        </div>
+        <button class="btn btn-outline" type="button" id="nRefresh"><span data-icon="refresh" data-icon-class="icon-sm"></span> Actualizar</button>
+      </div>
+    </section>
+
+    <p class="small muted" id="nCount" aria-live="polite"></p>
+    <section id="newsGrid" class="news-grid" aria-label="Listado de noticias"></section>
+  </main>
+
+  <script src="js/unab-icons.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/pages/noticias.js"></script>
+</body>
+</html>
